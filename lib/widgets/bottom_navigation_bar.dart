@@ -1,44 +1,38 @@
 import 'package:flutter/material.dart';
 import '../models/bottom_nav_item.dart';
 
+const backgroundColor = Color.fromRGBO(43, 47, 51, 1.0);
+const unselectedItemColor = Color.fromRGBO(127, 132, 147, 1.0);
+const selectedIndex = 2;
+const iconSize = 30.0;
+const selectedFontSize = 16.0;
+
 class CustomBottomNavigationBar extends StatelessWidget {
+  const CustomBottomNavigationBar({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    return buildBottomNavigationBar(buildBottomNavBarItems());
+  }
+
+  BottomNavigationBar buildBottomNavigationBar(List<BottomNavigationBarItem> items){
     return BottomNavigationBar(
-      backgroundColor: const Color.fromRGBO(43, 47, 51, 1.0),
-      currentIndex: 2,
-      iconSize: 30,
+      backgroundColor: backgroundColor,
+      currentIndex: selectedIndex,
+      iconSize: iconSize,
       type: BottomNavigationBarType.fixed,
       selectedItemColor: Colors.white,
-      selectedFontSize: 16,
+      selectedFontSize: selectedFontSize,
       showUnselectedLabels: false,
-      unselectedItemColor: const Color.fromRGBO(127, 132, 147, 1.0),
-      items: buildBottomNavBarItems(),
+      unselectedItemColor: unselectedItemColor,
+      items: items,
     );
   }
 
   List<BottomNavigationBarItem> buildBottomNavBarItems() {
-    return const [
-      BottomNavigationBarItem(
-        icon: Icon(Icons.person_outline),
-        label: "Order",
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.rate_review_outlined),
-        label: "Tickets",
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.local_taxi_outlined),
-        label: "Order",
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.history_outlined),
-        label: "History",
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.settings_outlined),
-        label: "Settings",
-      ),
-    ];
+    return bottomNavItems.map((bottomNavItem) => BottomNavigationBarItem(
+      icon: Icon(bottomNavItem.icon),
+      label: bottomNavItem.label,
+    )).toList();
   }
 }
