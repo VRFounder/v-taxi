@@ -13,9 +13,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomAppBar(),
-      body: const GradientContainer(),
+    return const Scaffold(
+      appBar: CustomAppBar(),
+      body: GradientContainer(),
       bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
