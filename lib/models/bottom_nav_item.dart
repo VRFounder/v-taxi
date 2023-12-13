@@ -13,5 +13,5 @@ final List<BottomNavItem> bottomNavItems = [
   BottomNavItem(Icons.local_taxi_outlined, "Order"),
   BottomNavItem(Icons.history_outlined, "History"),
   BottomNavItem(Icons.settings_outlined, "Settings"),
-  // Add as many as necessary
 ];
+

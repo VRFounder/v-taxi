@@ -3,12 +3,14 @@ import '../models/bottom_nav_item.dart';
 
 const backgroundColor = Color.fromRGBO(43, 47, 51, 1.0);
 const unselectedItemColor = Color.fromRGBO(127, 132, 147, 1.0);
-const selectedIndex = 2;
 const iconSize = 30.0;
 const selectedFontSize = 16.0;
 
 class CustomBottomNavigationBar extends StatelessWidget {
-  const CustomBottomNavigationBar({Key? key}) : super(key: key);
+  final int currentIndex;
+  final ValueChanged<int> onTabSelected;
+
+  const CustomBottomNavigationBar({super.key, required this.currentIndex, required this.onTabSelected});
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +19,9 @@ class CustomBottomNavigationBar extends StatelessWidget {
 
   BottomNavigationBar buildBottomNavigationBar(List<BottomNavigationBarItem> items){
     return BottomNavigationBar(
+      onTap: onTabSelected,
       backgroundColor: backgroundColor,
-      currentIndex: selectedIndex,
+      currentIndex: currentIndex,
       iconSize: iconSize,
       type: BottomNavigationBarType.fixed,
       selectedItemColor: Colors.white,
