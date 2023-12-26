@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:v_taxi/screens/forms/login.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -11,13 +12,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text(
-        'Profile Page',
-        style: TextStyle(
-          fontSize: 24,
-          color: Color.fromRGBO(127, 132, 147, 1.0),
-        ),
-      ),
+      child: Login(),
     );
   }
 }

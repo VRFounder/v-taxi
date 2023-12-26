@@ -4,7 +4,6 @@ import 'package:v_taxi/screens/profile_screen.dart';
 import 'package:v_taxi/screens/story_screen.dart';
 import 'package:v_taxi/screens/tickets_screen.dart';
 import '../widgets/app_bar.dart';
-import '../widgets/gradient_container.dart';
 import '../widgets/bottom_navigation_bar.dart';
 
 class HomeScreen extends StatefulWidget {
